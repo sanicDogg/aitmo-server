@@ -34,7 +34,7 @@ const codeChange = ({ socket, io }, commonCode) => {
     collaborativeCode[user.room] = commonCode;
 
     const userRoom = user.room;
-    io.to(userRoom).emit("codeChange", commonCode);
+    io.to(userRoom).emit("codeChange", {commonCode, author: user.name});
 }
 
 const disconnect = ({ socket, io }) => {
@@ -118,7 +118,7 @@ const join = ({ socket, io }, userData, callback) => {
 
     io.to(user.room).emit("roomData",getRoomData(user.room));
 
-    io.to(user.room).emit("codeChange", collaborativeCode[user.room]);
+    io.to(user.room).emit("codeChange", {commonCode: collaborativeCode[user.room]});
 
     callback();
 }
