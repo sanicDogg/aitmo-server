@@ -22,3 +22,8 @@
 `users.js` - файл с описанием пользователей
 
 `socket-messages.js` - файл, обрабатывающий сообщения по протоколу WebSocket 
+
+### Клиент
+Ссылка на репозиторий с клиентом:
+
+[https://github.com/sanicDogg/aitmo-client](https://github.com/sanicDogg/aitmo-client)
